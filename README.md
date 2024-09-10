@@ -44,7 +44,7 @@ description
 
 PERTANYAAN 2
 Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-(C:\Users\Ridya Azizah\Downloads\RidyaAzizah_bagantugas2pbp.jpg)
+![Bagan](https://drive.google.com/file/d/1729EFr-L7-pM9UorJeV9bYzdVmnq-aJL/view?usp=sharing)
 Client mengirim permintaan ke internet yang kemudian dialihkan ke Python/Django, lalu dialihkan ke urls.py untuk menentukan routing, yang selanjutnya diteruskan ke views.py untuk mengolah URL. Di sini, views.py melakukan operasi baca/tulis data dari dan ke models.py serta basis data. Setelah itu, data tersebut diintegrasikan ke dalam templates untuk menyiapkan file HTML, yang selanjutnya dikembalikan ke internet dan akhirnya ditampilkan pada perangkat client.
 
 PERTANYAAN 3

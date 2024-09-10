@@ -6,38 +6,38 @@ Kelas: A
 ## 1. Cara saya mengimplementasikan checklist secara step-by-step 
 1) Membuat sebuah proyek Django baru
 - Membuat direktori lokal baru dengan nama "breezy" untuk menyimpan proyek Git
-- Mengonfigurasi awal Git dengan menginisiasi repositori baru yang akan membuat repositori Git kosong di dalam direktori lokal
+- Mengonfigurasi awal Git dengan menginisiasi repositori baru yang akan membuat repositori Git kosong di dalam direktori lokal dengan perintah git init, git config user.name <user_name>, dan git config user.email <user_email>
 - Membuat repositori github baru yang bernama "breezy"
-- Membuat branch utama main, dan menghubungkan repositori lokal dengan repositori GitHub
-- Mengaktifkan virtual environment melalui command prompt agar dapat mengelola dependensi proyek secara terpisah dan memastikan konsistensi lingkungan pengembangan
-- Membuat berkas requirements.txt untuk menambahkan dependencies yang kemudian diinstall, dan membuat proyek Django bernama breezy
+- Membuat branch utama main, dan menghubungkan repositori lokal dengan repositori GitHub dengan perintah git branch -M main, git remote add origin https://github.com/ridyaazizahkm/breezy.git, dan git push -u origin main
+- Menjalankan danm engaktifkan virtual environment melalui command prompt dengan perintah python -m venv env dan env\Scripts\activate agar dapat mengelola dependensi proyek secara terpisah dan memastikan konsistensi lingkungan pengembangan
+- Membuat berkas requirements.txt untuk menambahkan dependencies yang kemudian diinstall dengan perintah pip install -r requirements.txt, dan membuat proyek Django bernama breezy
 - Mendaftarkan local host sebagai host yang diizinkan untuk mengakses aplikasi web pada file settings.py di bagian ALLOWED_HOST
 - Membuat file .gitignore untuk menentukan berkas dan direktori yang harus diabaikan oleh Git
 - Lakukan add, commit, push dari direktori repositori lokal
 
 2) Membuat aplikasi dengan nama main pada proyek tersebut
-- Membuat app main pada direktori proyek breezy
+- Membuat app main pada direktori proyek breezy dengan perintah python manage.py startapp main
 - Tambahkan 'main' ke INSTALLED_APPS di dalam file settings.py
-- Membuat dan mengisi berkas main.html dengan kategori dan produk parfum. Saya membuat kategori name, price, description, ukuran, aroma, top notes, middle notes, base notes dari produk parfum tersebut
+- Membuat dan mengisi berkas main.html pada direktori baru yaitu templates, yang berisi nama aplikasi, nama, dan kelas
 
 3) Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
-- Membuat berkas urls.py di direktori main untuk mengatur rute URL yang terkait dengan aplikasi main menggunakan fungsi show_main dari modul main.views sebagai tampilan yang akan ditampilkan ketika URL terkait diakses
+- Membuat berkas urls.py di direktori main untuk mengatur rute URL yang terkait dengan aplikasi main menggunakan fungsi show_main sebagai tampilan yang akan ditampilkan ketika URL terkait diakses
 - Mengonfigurasi routing URL proyek melalui urls.py di direktori proyek breezy, di dalam variabel urlpatterns
-- Jalankan proyek Django dan buka http://localhost:8000/ untuk melihat halaman yang sudah dibuat
+- Jalankan proyek Django dengan perintah python manage.py runserver dan buka http://localhost:8000/ untuk melihat halaman yang sudah dibuat
 
 4) Membuat model pada aplikasi main dengan nama Product dan memiliki atribut wajib sebagai berikut.
 name
 price
 description
-- Mengubah berkas models.py yang berada dalam aplikasi main, mengisi dengan atribut yang diperlukan. Di sini, saya menggunakan 8 atribut.
+- Mengubah berkas models.py yang berada dalam aplikasi main, mengisi dengan atribut yang diperlukan. Di sini, saya menggunakan 9 atribut.
 - Membuat dan mengaplikasikan migrasi model ke dalam basis data lokal, untuk melacak perubahan pada model basis data
 
 5) Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu
-- Menghubungkan view dengan template, dengan menambahkan fungsi show_main dengan context data kategori produk di dalam berkas views.py
-- Memodifikasi template pada main.html dengan mengubah struktur kode Django untuk menampilkan data, yaitu mengganti sintaks Django seperti {{ name }}, {{ price }}, dan seterusnya
+- Menghubungkan views dengan templates, dengan menambahkan fungsi show_main dengan isi nama dan kelas
+- Memodifikasi template pada main.html dengan mengubah struktur kode Django untuk menampilkan data, yaitu mengganti sintaks Django yaitu {{ nama }} dan {{ kelas }}
 
 6) Melakukan deployment ke PWS terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
-- Dalam command prompt, lakukan push untuk update repositori github yang berisi kode terbaru
+- Dalam command prompt, lakukan push untuk update repositori github yang berisi kode terbaru, dengan perintah git add ., git commit -m "pesan commit", dan git push -u origin main
 - Untuk deploy ke PWS, akses halaman PWS, login, dan create new project yang bernama breezy 
 - Pada settings.py proyek Django, tambahkan ALLOWED_HOST dengan URL deployment PWS "ridya-azizah-breezy.pbp.cs.ui.ac.id"
 - Jalankan perintah yang ada pada informasi project command

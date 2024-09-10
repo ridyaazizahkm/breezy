@@ -43,22 +43,19 @@ description
 - Jalankan perintah yang ada pada informasi project command
 
 ## 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-![](C:\Users\Ridya Azizah\Downloads\RidyaAzizah_bagantugas2pbp.jpg)
+![](https://github.com/ridyaazizahkm/breezy/blob/main/RidyaAzizah_bagantugas2pbp.jpg)
 Client mengirim permintaan ke internet yang kemudian dialihkan ke Python/Django, lalu dialihkan ke urls.py untuk menentukan routing, yang selanjutnya diteruskan ke views.py untuk mengolah URL. Di sini, views.py melakukan operasi baca/tulis data dari dan ke models.py serta basis data. Setelah itu, data tersebut diintegrasikan ke dalam templates untuk menyiapkan file HTML, yang selanjutnya dikembalikan ke internet dan akhirnya ditampilkan pada perangkat client.
 
-PERTANYAAN 3
 ## 3. Fungsi git dalam pengembangan perangkat lunak
 1. Efektif untuk kolaborasi tim dalam mengembangkan proyek yang sama tanpa mengganggu pekerjaan orang lain, dengan menerapkan branch terpisah, dan menggabungkannya kembali ke dalam branch utama dengan merge setelah proyek selesai
 2. Memungkinkan pengembang untuk melacak dan mengelola perubahan pada kode sumber yang disimpan dalam git dengan commit untuk mencatat perubahannya. Ini dapat terlihat siapa yang membuat perubahan tertentu dan kapan perubahan dibuat
 3. Memungkinkan tim pengembang untuk memelihara berbagai versi dari sebuah produk, yang berguna untuk mengelola rilis produk yang berbeda dan juga eksperimen fitur baru tanpa mengganggu basis kode utama
 4. Pengembang dapat memiliki salinan lengkap dari repository termasuk sejarahnya, memungkinkan pengembangan berlanjut walaupun tidak terhubung ke server pusat
 
-PERTANYAAN 4
 ## 4. Mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
 1. Struktur dari Django terorganisir, dengan mengikuti pola Model-View-Template yang memberikan struktur jelas untuk aplikasi web. Hal ini membantu pemula untuk memahami bagaimana data dihandle, halaman web disajikan, dan logika aplikasi diatur.
 2. Django memiliki dokumentasi yang luas yang membuat framework ini merupakan framework open source terbaik, sehingga pemula dapat lebih mudah untuk mempelajari framework ini karena panduannya yang terperinci
 3. Fitur-fitur pada Django sangat banyak dan beragam, membantu pengembang untuk membangun aplikasi web yang aman dan berfitur lengkap dengan lebih cepat.
 
-PERTANYAAN 5
 ## 5. Mengapa model pada Django disebut sebagai ORM?
 ORM (Object-Relational Mapping) adalah teknik pemrograman yang digunakan untuk mengonversi data antara sistem basis data dan objek pemrograman. Model pada Django dianggap sebagai ORM karena ia menyediakan lapisan abstraksi yang memungkinkan pengembang untuk berinteraksi dengan database melalui objek Python tanpa harus menulis query SQL secara langsung. Django juga bekerja dengan berbagai jenis sistem database seperti MySQL, PostgreSQL, dll. tanpa perlu mengubah kode aplikasi secara substansial. Django juga dilengkapi dengan sistem migrasi yang memudahkan pengembangan dan perubahan skema database seiring dengan berjalannya waktu.

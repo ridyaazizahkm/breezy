@@ -21,8 +21,7 @@ Kelas: A
 - Membuat dan mengisi berkas main.html pada direktori baru yaitu templates, yang berisi nama aplikasi, nama, dan kelas
 
 3) Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
-- Membuat berkas urls.py di direktori main untuk mengatur rute URL yang terkait dengan aplikasi main menggunakan fungsi show_main sebagai tampilan yang akan ditampilkan ketika URL terkait diakses
-- Mengonfigurasi routing URL proyek melalui urls.py di direktori proyek breezy, di dalam variabel urlpatterns
+- Mengonfigurasi routing URL proyek melalui urls.py "from django.urls import path, include" dan pada variable urlpatters tambahkan path('', include('main.urls')).
 - Jalankan proyek Django dengan perintah python manage.py runserver dan buka http://localhost:8000/ untuk melihat halaman yang sudah dibuat
 
 4) Membuat model pada aplikasi main dengan nama Product dan memiliki atribut wajib sebagai berikut.
@@ -36,7 +35,10 @@ description
 - Menghubungkan views dengan templates, dengan menambahkan fungsi show_main dengan isi nama dan kelas
 - Memodifikasi template pada main.html dengan mengubah struktur kode Django untuk menampilkan data, yaitu mengganti sintaks Django yaitu {{ nama }} dan {{ kelas }}
 
-6) Melakukan deployment ke PWS terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
+6) Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py
+- Membuat berkas urls.py di direktori main untuk mengatur rute URL yang terkait dengan aplikasi main menggunakan fungsi show_main sebagai tampilan yang akan ditampilkan ketika URL terkait diakses
+
+7) Melakukan deployment ke PWS terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
 - Dalam command prompt, lakukan push untuk update repositori github yang berisi kode terbaru, dengan perintah git add ., git commit -m "pesan commit", dan git push -u origin main
 - Untuk deploy ke PWS, akses halaman PWS, login, dan create new project yang bernama breezy 
 - Pada settings.py proyek Django, tambahkan ALLOWED_HOST dengan URL deployment PWS "ridya-azizah-breezy.pbp.cs.ui.ac.id"

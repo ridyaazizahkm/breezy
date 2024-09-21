@@ -2,6 +2,8 @@ Nama: Ridya Azizah Khayyira Mumtaz
 NPM: 2306245895
 Kelas: A
 
+Link deploy pws: http://ridya-azizah-breezy.pbp.cs.ui.ac.id
+
 ## TUGAS 2
 ## 1. Cara saya mengimplementasikan checklist secara step-by-step 
 1) Membuat sebuah proyek Django baru

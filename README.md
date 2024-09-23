@@ -554,4 +554,4 @@ def logout_user(request):
 - Melakukan add commit push ke GitHub dengan perintah berikut
 git add .
 git commit -m "isi commit"
-git push origin main
+git push -u origin main

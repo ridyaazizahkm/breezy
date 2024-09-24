@@ -3,6 +3,7 @@ NPM: 2306245895
 Kelas: A
 
 Link deploy pws: http://ridya-azizah-breezy.pbp.cs.ui.ac.id
+Link pws: https://pbp.cs.ui.ac.id/web/project/ridya.azizah/breezy
 
 ## TUGAS 2
 ## 1. Cara saya mengimplementasikan checklist secara step-by-step 
@@ -280,7 +281,6 @@ from main.views import show_main, create_mood_entry, show_xml, show_json, show_x
 ![](https://github.com/ridyaazizahkm/breezy/blob/main/RidyaAzizah_Tugas3%20JSON.png)
 ![](https://github.com/ridyaazizahkm/breezy/blob/main/RidyaAzizah_Tugas3%20XML%20by%20ID.png)
 ![](https://github.com/ridyaazizahkm/breezy/blob/main/RidyaAzizah_Tugas3%20JSON%20by%20ID.png)
-<<<<<<< HEAD
 
 ## TUGAS 4
 
@@ -558,5 +558,3 @@ def logout_user(request):
 git add .
 git commit -m "isi commit"
 git push -u origin main
-=======
->>>>>>> c2206c2fe32f46922c6076c0ba5782e4cc5cecd5

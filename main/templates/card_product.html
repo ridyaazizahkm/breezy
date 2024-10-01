@@ -1,0 +1,30 @@
+<div class="relative break-inside-avoid">
+    <div class="relative top-5 bg-[#EEEDEB] shadow-xl rounded-t-lg rounded-b-xl mb-6 break-inside-avoid flex flex-col transform rotate-1 hover:rotate-0 transition-transform duration-300">
+        <div class="bg-[#b2c4d4] text-white p-4 rounded-t-xl">
+            <h3 class="font-bold text-2xl mb-2 text-white">{{ product_entry.name }}</h3>
+            <p class="text-white">
+                IDR <span class="border-b-2 border-[#EEE3CB] text-white">{{ product_entry.price }}</span>
+            </p>
+        </div>
+        <p class="p-4 text-[#3C3633]">{{ product_entry.description }}</p>
+        <div class="p-4">
+            <p class="font-semibold text-lg mb-1 text-[#3C3633]">Details</p>
+            <p class="text-[#3C3633] mb-1">Aroma: {{ product_entry.aroma }}</p>
+            <p class="text-[#3C3633] mb-1">Ukuran: {{ product_entry.ukuran }}</p>
+        </div>
+        <div class="p-4">
+            <p class="font-semibold text-lg mb-1 text-[#3C3633]">Notes</p>
+            <p class="text-[#3C3633] mb-1">Top: {{ product_entry.top_notes }}</p>
+            <p class="text-[#3C3633] mb-1">Middle: {{ product_entry.middle_notes }}</p>
+            <p class="text-[#3C3633] mb-1">Base: {{ product_entry.base_notes }}</p>
+        </div>
+        <div class="flex p-4">
+            <a href="{% url 'main:edit_product' product_entry.pk %}" class="bg-[#C7C8CC] hover:bg-[#C7C8CC] text-black font-bold flex-1 text-center py-2 mx-1 rounded">
+                Edit
+            </a>
+            <a href="{% url 'main:delete_product' product_entry.pk %}" class="bg-[#C96868] hover:bg-[#B05555] text-white font-bold flex-1 text-center py-2 mx-1 rounded">
+                Delete
+            </a>
+        </div>
+    </div>
+</div>

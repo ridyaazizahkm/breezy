@@ -18,14 +18,16 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django.utils.html import strip_tags
+
 @login_required(login_url='/login')
 def show_main(request):
-    product_entries = Product.objects.filter(user=request.user)
 
     context = {
         'nama' : request.user.username,
         'kelas' : 'PBP-A',
-        'product_entries' : product_entries,
         'last_login': request.COOKIES['last_login'],
     }
 
@@ -45,12 +47,12 @@ def create_product_entry(request):
 
 # Fungsi untuk kembalikan data dalam bentuk XML
 def show_xml(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
 # Fungsi untuk kembalikan data dalam bentuk JSON
 def show_json(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
  # Fungsi untuk mengembalikan data berdasarkan ID dalam bentuk XML
@@ -85,6 +87,9 @@ def login_user(request):
         response = HttpResponseRedirect(reverse("main:show_main"))
         response.set_cookie('last_login', str(datetime.datetime.now()))
         return response
+      
+      else:
+        messages.error(request, "Invalid username or password. Please try again.")
 
    else:
         form = AuthenticationForm(request)
@@ -113,9 +118,29 @@ def edit_product(request, id):
     return render(request, "edit_product.html", context)
 
 def delete_product(request, id):
-    # Get mood berdasarkan id
     product = Product.objects.get(pk = id)
-    # Hapus mood
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
+
+@csrf_exempt
+@require_POST
+def add_product_entry_ajax(request):
+    name = strip_tags(request.POST.get("name"))
+    price = request.POST.get("price")
+    description = strip_tags(request.POST.get("description"))
+    ukuran = strip_tags(request.POST.get("ukuran"))
+    aroma = strip_tags(request.POST.get("aroma"))
+    top_notes = strip_tags(request.POST.get("top_notes"))
+    middle_notes = strip_tags(request.POST.get("middle_notes"))
+    base_notes = strip_tags(request.POST.get("base_notes"))
+    user = request.user
+
+    new_product = Product(
+        name=name, price=price, description=description,
+        ukuran=ukuran, aroma=aroma, top_notes=top_notes, 
+        middle_notes=middle_notes, base_notes=base_notes, user=user
+    )
+    new_product.save()
+
+    return HttpResponse(b"CREATED", status=201)

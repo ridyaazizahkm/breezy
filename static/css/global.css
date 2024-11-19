@@ -19,3 +19,15 @@
     animation: shine 3s infinite;
 }
 
+.card{
+    border: 10 px;
+  }
+  
+  .card h2{
+    font-size: 1.5em;
+    color: black;
+  }
+  
+  .card p{
+    color: yellow;
+  }
